@@ -10,6 +10,7 @@
 #SBATCH --output=/home/%u/slurmfiles_out/slurm_%j.out
 #SBATCH --error=/home/%u/slurmfiles_err/slurm_%j.err
 
-source /programs/sbgrid.shrc
+ml purge
+ml hmmer
 
 hmmbuild <>.hmm <>_seed.txt
