@@ -12,6 +12,4 @@
 
 source /programs/sbgrid.shrc
 
-while read line;
-do efetch -db protein -id $line -format fasta;
-done < <>_hits.txt >> <>_hits.fa
+hmmbuild <>.hmm <>_seed.txt

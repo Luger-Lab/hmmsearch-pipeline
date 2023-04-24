@@ -1,18 +1,15 @@
 #!/bin/bash
-#SBATCH -p short # Partition or queue. In this case, short!
-#SBATCH --job-name=muscle_align # Job name
-#SBATCH --mail-type=END # Mail events (NONE, BEGIN, END, FAIL, ALL)
-#SBATCH --mail-user=shla9937@colorado.edu
-#SBATCH --nodes=1 # Only use a single node
-#SBATCH --ntasks=1 # Run on a single node
-#SBATCH --cpus-per-task=1 # cpus
-#SBATCH --mem=4gb # Memory limit
-#SBATCH --time=24:00:00 # Time limit hrs:min:sec
-#SBATCH --output=/Users/%u/slurmfiles_out/slurm_%j.out # Standard output and error log
-#SBATCH --error=/Users/%u/slurmfiles_err/slurm_%j.err # %j inserts job number
+#SBATCH --partition=blanca       
+#SBATCH --qos=preemptable  
+#SBATCH --account=blanca-biokem
+#SBATCH --job-name=alphafold_predict
+#SBATCH --nodes=1
+#SBATCH --ntasks=8
+#SBATCH --mem=32gb
+#SBATCH --time=24:00:00
+#SBATCH --output=/home/%u/slurmfiles_out/slurm_%j.out
+#SBATCH --error=/home/%u/slurmfiles_err/slurm_%j.err
 
-module purge
+source /programs/sbgrid.shrc
 
-module load muscle
-
-muscle -in cren7_hits.fa -out cren7_hits.afa
+muscle -in <>_hits.fa -out <>_hits.afa
