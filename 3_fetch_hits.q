@@ -10,6 +10,7 @@
 #SBATCH --output=/home/%u/slurmfiles_out/slurm_%j.out
 #SBATCH --error=/home/%u/slurmfiles_err/slurm_%j.err
 
+ml purge
 ml edirect 
 
 while read line;
